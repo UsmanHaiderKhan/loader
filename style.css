@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: blueviolet;
+}
+.loader{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid blueviolet;
+    box-shadow: -5px -5px 5px rgba(255, 255, 255, .1),
+                10px 10px 10px rgba(0, 0, 0, .1),
+                inset  -5px -5px 5px rgba(255, 255, 255, .1),
+                inset   10px 10px 10px rgba(0, 0, 0, .1);
+}
+.loader:before{
+    content: '';
+    position: absolute;
+    left: 14%;
+    right: 14%;
+    top: 14%;
+    bottom: 14%;z-index: 10;
+    background-color: blueviolet;
+    border-radius: 50%;
+    border: 2px solid blueviolet;
+    box-shadow:  inset  -2px -2px 5px rgba(255, 255, 255, .2),
+    inset   3px 3px 5px rgba(0, 0, 0, .5);
+
+}
+.loader span{
+    position: absolute;
+    width: 100%;
+    height: 100%;z-index: -1;
+    border-radius: 100%;
+    background:linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
+    filter: blur(20%);
+    animation: animate 1s linear infinite;
+}
+
+.btn-neon
+{
+    margin-top: 30px;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    font-family: serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: .5s;border: none;
+    background: transparent;
+    position: relative;
+}
+.btn-neon:hover{
+    background: #14ffe9;
+    box-shadow:  0 0 50px #14ffe9;
+-webkit-box-reflect:below 1px linear-gradient(transparent,#0003);
+
+}
+.btn-neon::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+   width: 10px;
+   height: 10px;
+   border-top: 2px solid white;
+   border-left:2px solid white;
+   transition: .5s;
+
+}
+.btn-neon:hover::after{
+    width: 100%;
+    height: 100%;
+}
+.btn-neon::before{
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    right: 0;
+   width: 10px;
+   height: 10px;
+   border-bottom: 2px solid white;
+   border-right:2px solid white;
+   transition: .5s;
+}
+.btn-neon:hover::before{ width: 100%;
+    height: 100%;}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
